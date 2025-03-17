@@ -172,3 +172,10 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+# Knowledge Base
+chroma_db/
+
+# Secret files
+bookstore-498b8-firebase-adminsdk-fbsvc-fa6ac73052.json
+chateaseai-firebase-adminsdk-fbsvc-b1f7e5963e.json
