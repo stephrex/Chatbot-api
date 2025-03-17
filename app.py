@@ -1,3 +1,4 @@
+import os
 import json
 from RAG import RAG
 from firebase_config import db
@@ -92,5 +93,11 @@ def faq():
     return jsonify({"response": response})
 
 
+# if __name__ == "__main__":
+#     app.run(debug=True)
+
+# Use Render's assigned port or default to 5000
+port = int(os.environ.get("PORT", 5000))
+
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port=port, debug=True)
