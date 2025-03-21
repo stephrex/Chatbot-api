@@ -2,6 +2,7 @@ import os
 import chromadb
 from dotenv import load_dotenv
 from langchain_chroma import Chroma
+from get_client_data import GetData
 from langchain.schema import Document
 from langchain_community.document_loaders import TextLoader
 from langchain_core.messages import HumanMessage, AIMessage
@@ -35,13 +36,30 @@ class RAG():
                 for question, answer in faq.items():
                     f.write(f"Q: {question}\nA: {answer}\n\n")
 
-            f.write("## Product Listings\n")
+            # f.write("## Product Listings\n")
+            # for product in products:
+            #     f.write(
+            #         f"Book: {product['title']}\nPrice: {product['price']}\nAuthor: {product['author']}\n\n")
+
+            f.write("\n## Product Listings/Phones/Electrical Appliances\n")
             for product in products:
-                f.write(
-                    f"Book: {product['title']}\nPrice: {product['price']}\nAuthor: {product['author']}\n\n")
+                product_line = (
+                    f"Product ID: {product.get('Product ID', 'N/A')} | "
+                    f"Name: {product.get('Product Name', 'N/A')} | "
+                    f"Category: {product.get('Category', 'N/A')} | "
+                    f"Brand: {product.get('Brand', 'N/A')} | "
+                    f"Model: {product.get('Model', 'N/A')} | "
+                    f"Description: {product.get('Description', 'N/A')} | "
+                    f"Specifications: {product.get('Specifications', 'N/A')} | "
+                    f"Price: {product.get('Price', 'N/A')} | "
+                    f"Stock: {product.get('Stock', 'N/A')} | "
+                    f"Warranty: {product.get('Warranty', 'N/A')}\n\n"
+                )
+                f.write(product_line)
 
     def create_vector_store(self):
         # # Initialize Embeddings
+        print('[INFO] Creating Vectorstore in Persistent Dir')
         embeddings = GoogleGenerativeAIEmbeddings(model='models/embedding-001')
 
         if not os.path.exists(self.text_file):
@@ -72,14 +90,16 @@ class RAG():
 
     def query_LLM(self):
         contextualize_q_system_prompt = (
-            "You are assisting with reformulating user questions within the context of a book-selling business. "
-            "Your goal is to ensure that the user's query is interpreted correctly in relation to the company's services.\n\n"
+            "You are assisting with reformulating user questions within the context of a electrical appliances store business. "
+            "Your goal is to ensure that the user's query is interpreted correctly in relation to the company's services."
+            "and that the right information regarding the users query is retireved from a database of the business\n\n"
 
             "**Instructions:**\n"
             "- If a user greets you (e.g., 'Hello', 'Hi'), reframe the question as a request for a request about the business.\n"
             "- If a user asks who you are, reframe it to clarify that you are an AI-powered assistant for the business.\n"
-            "- If the user asks unrelated questions (e.g., about technology, general AI, or external topics), gently guide them back to book-related topics.\n"
+            "- If the user asks unrelated questions (e.g., about technology, general AI, or external topics), gently guide them back to electric store business-related topics.\n"
             "- Keep all questions strictly within the scope of the business and its services."
+            "- always reformulate any question that is out of the scope of the business, or unrelated, to be guided back to the electric store business-related topics"
         )
 
         contextualize_q_prompt = ChatPromptTemplate.from_messages([
@@ -94,27 +114,36 @@ class RAG():
         )
 
         qa_system_prompt = (
-            "You are a **customer support assistant** for a business that sells books. "
-            "Your primary role is to provide helpful, accurate information about the business, its products, and services. "
-            "You should **only** answer questions related to the business and its offerings.\n\n"
-            "You have access to product listings, including their prices and categories. "
-            "When a user asks about a product, extract relevant product information from the provided context. "
+            "You are a customer support assistant for a business that sells electronics."
+            "Your primary role is to provide helpful, accurate information about the business, its products, and services. You should only answer questions related to the business and its offerings."
+
+            "You have access to live product listings, including their prices, specifications, and categories. When a user asks about a product, "
+            "extract relevant product information from the provided context. "
             "If a user asks about a product’s price, availability, or description, answer directly using the given data. "
-            "If the information is missing, say 'I couldn’t find the details, please check our website.' "
+            "If the information is missing, tell them you couldn't find the details, and redirect them to the website or the human customer support, by giving them the contact details"
 
-            "**Instructions:**\n"
-            "- If the user greets (e.g., 'Hello', 'Hi', 'Good day'), respond with a friendly greeting introducing the business. Example: "
-            "'Hello! Welcome to Book Next, your one-stop shop for books. How can I assist you today?'\n"
-            "- If the user asks about the business (e.g., 'What do you do?', 'Tell me about your company'), provide details about the business and its products.\n"
-            "- If the user asks who made you or who you are, reply as a customer support assistant for [Business Name]. Example: "
-            "'I am an AI-powered customer support assistant for [Business Name], here to help you with book inquiries and purchases.'\n"
-            "- If the user asks something unrelated (e.g., politics, weather, who is the president), politely redirect them back to the business context. Example: "
-            "'I'm here to assist with book-related queries. How can I help you today?'\n\n"
+            "Instructions:"
+            'If the user greets (e.g., "Hello", "Hi", "Good day"), respond with a friendly greeting introducing the business. Example:'
+            "Hello! Welcome to ElectroNest, your go-to store for the latest electronics. How can I assist you today?"
+            'If the user asks about the business (e.g., "What do you do?", "Tell me about your company"), provide details about the store and its products.'
+            'If the user asks who made you or who you are, reply as a customer support assistant for ElectroNest. Example:'
+            "I am an AI-powered customer support assistant for ElectroNest, here to help you with electronics inquiries and purchases."
+            'If the user asks something unrelated (e.g., politics, weather, who is the president, and sot of un-realted question that does not concern a customer support assistant), politely redirect them back to the business context. Example:'
+            "I'm here to assist with electronics-related queries. How can I help you today?"
+            'You would be given a list of products or faqs, when given product, if the amount in stock is mush just tell them we have a lot in stock, not the exact amount we have in stocks. If we have few you can tell them the amount we have in stock. Few can be anything less than 5'
 
-            "Example Queries: "
-            "- 'How much is the iPhone 15?' → 'The iPhone 15 costs $999.' "
-            "- 'Do you have laptops?' → 'Yes, we have laptops including Dell, HP, and MacBooks.'"
-            "**Important:** Always provide responses in a friendly and professional tone, staying within the business domain.\n\n"
+            'Example Queries:'
+            'How much is the iPhone 15?: The iPhone 15 costs $999.'
+            "Do you have gaming laptops?: Yes, we have gaming laptops including Alienware, Razer, and ASUS ROG models."
+            "What is the warranty on a Samsung TV?: The Samsung TV comes with a 1-year manufacturer warranty."
+            "What can you say about today's weather: I am a customer support assistant, and I'm here to support you with your queries concerning ElectroNest"
+            '1+1 is what: Sorry, I cant give you information about that, i am customer support assisitant for ElectroNest'
+
+            'Important:'
+            'Always provide responses in a friendly and professional tone, staying within the electronics business domain.'
+            'Never Never Never Never answer any unrelated questions that doesnt concern the business and a customer support assistant'
+            'You are limited to the companys information alone'
+            'Act like a customer support assistant, with so much marketing skills, parsuade the customer by all means to buy your product'
             "{context}\n\n"
         )
 
@@ -166,7 +195,6 @@ class RAG():
         return result['answer'], chat_history
 
     def run(self, prompt, chat_history):
-        self.create_vector_store()
         self.retrieve_info(self.vectorstore)
         self.query_LLM()
         result, history = self.continual_chat(prompt, chat_history)

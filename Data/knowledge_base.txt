@@ -1,31 +1,33 @@
 ## About the Business
-' About Us
-Who We Are
-BookNest is your go-to destination for books that inspire, educate, and entertain. We are passionate about connecting readers with stories, knowledge, and ideas that enrich lives. Whether you're looking for bestsellers, rare finds, or niche genres, we have something for every book lover.
+'         About Us
+        Who We Are
+        ElectroNest is your trusted destination for cutting-edge electronics, home gadgets, and smart devices. We are committed to providing high-quality products that enhance everyday life, from smartphones and laptops to home appliances and accessories. Whether you're a tech enthusiast, a professional, or a casual user, we have the right solutions for you.
 
-Our Mission
-Our mission is to make books accessible to everyone. We believe that reading has the power to transform lives, and we strive to provide a seamless shopping experience with a vast collection of books across all categories.
+        Our Mission
+        Our mission is to make the latest and most reliable electronics accessible to everyone. We believe in innovation, affordability, and customer satisfaction, ensuring that you always get the best products at the best prices.
 
-What We Offer
-Diverse Collection – From fiction and non-fiction to academic texts, self-help, and children's books, we offer a wide range of genres.
-Affordable Prices – Competitive pricing and special discounts to make books more accessible.
-Fast & Reliable Delivery – Get your books delivered to your doorstep quickly and securely.
-Personalized Recommendations – Discover new reads based on your interests and past purchases.
-Easy Returns – Hassle-free return policy to ensure customer satisfaction.
-Why Choose Us?
-Quality Selection – Carefully curated books from top publishers and independent authors.
-Customer-Centric Service – We prioritize your reading needs and ensure a smooth shopping experience.
-Secure Payment Options – Multiple payment methods, including digital wallets and cash on delivery.
-Community of Readers – Engage with fellow book lovers through our blog, reviews, and reading events.
+        What We Offer
+        Wide Range of Electronics – Smartphones, laptops, smart home devices, accessories, and more.
+        Top Brands & Quality Assurance – Verified and certified products from leading global brands.
+        Competitive Pricing – Affordable deals, seasonal discounts, and exclusive offers.
+        Fast & Secure Delivery – Reliable nationwide shipping with tracking.
+        Expert Support – 24/7 customer service and professional tech advice.
+        Easy Returns & Warranty – Hassle-free returns and warranty protection on all products.
+        Why Choose Us?
+        Trusted Quality – We source only genuine and high-performance electronics.
+        Secure Payment Options – Multiple payment methods, including credit cards, digital wallets, and cash on delivery.
+        Personalized Recommendations – AI-powered suggestions based on your preferences.
+        Tech Community & Reviews – Join a network of tech lovers, read expert reviews, and make informed purchases.
+        Explore the future of technology with ElectroNest!
 
-Contact Us
-Location: Ikole, Ekiti
-Phone: 07069117393
-Email: booknest@gmail.com
-Website: www.booksnet.com
+        Contact Us
+        Location: Ikole, Ekiti
+        Phone: 07069117393
+        Email: electronest@gmail.com
+        Website: www.electronest.com
 
-Follow us on social media for the latest arrivals and exclusive deals!
-
+        Follow us on social media for the latest arrivals and exclusive deals!
+        
 
 ## Frequently Asked Questions
 Q: question
@@ -496,56 +498,27 @@ A: Can I return a product if it was purchased during a promotional event?
 Q: answer
 A: Yes, you can return a product purchased during a promotional event. The refund will be processed based on the amount paid after any applicable discounts.
 
-## Product Listings
-Book: 1984
-Price: 9
-Author: George Orwell
 
-Book: Brave New World
-Price: 13
-Author: Aldous Huxley
+## Product Listings/Phones/Electrical Appliances
+Product ID: TV001 | Name: Smart LED TV 55" | Category: Television | Brand: Samsung | Model: QLED55TU8000 | Description: 55" Smart LED TV with 4K UHD, HDR, and smart connectivity | Specifications: 55", 4K UHD, HDR, 3x HDMI ports | Price: $799.99 | Stock: 20 | Warranty: 2 years
 
-Book: Don Quixote
-Price: 14.99
-Author: Miguel de Cervantes
+Product ID: TV002 | Name: OLED TV 65" | Category: Television | Brand: LG | Model: OLED65CXPUA | Description: 65" OLED TV with AI Picture Pro for vivid picture quality | Specifications: 65", 4K UHD, OLED, AI Picture Pro, 4x HDMI ports | Price: $2,299.99 | Stock: 15 | Warranty: 3 years
 
-Book: Dracula
-Price: 10
-Author: Bram Stoker
+Product ID: LT001 | Name: UltraBook X13 | Category: Laptop | Brand: Dell | Model: XPS 13 | Description: 13" UltraBook with Intel i7, 16GB RAM, 512GB SSD | Specifications: 13", Intel i7, 16GB RAM, 512GB SSD, FHD display, lightweight | Price: $1,199.99 | Stock: 30 | Warranty: 1 year
 
-Book: Frankenstein
-Price: 9.99
-Author: Mary Shelley
+Product ID: LT002 | Name: MacBook Pro 16" | Category: Laptop | Brand: Apple | Model: MacBook Pro 2021 | Description: 16" MacBook Pro featuring the M1 Pro chip, 32GB RAM, 1TB SSD | Specifications: 16", M1 Pro, 32GB, 1TB SSD, Retina display, Touch Bar | Price: $3,499.99 | Stock: 10 | Warranty: 1 year
 
-Book: Moby Dick
-Price: 12.99
-Author: Herman Melville
+Product ID: SM001 | Name: Galaxy S22 Ultra | Category: Phone         | Brand: Samsung | Model: S22 Ultra | Description: Flagship 6.8" smartphone with a 108MP camera and 12GB RAM | Specifications: 6.8", Snapdragon, 108MP camera, 12GB RAM, 256GB storage | Price: $1,199.99 | Stock: 50 | Warranty: 1 year
 
-Book: Pride and Prejudice
-Price: 10.99
-Author: Jane Austen
+Product ID: SM002 | Name: iPhone 13 Pro Max | Category: Phone         | Brand: Apple | Model: iPhone 13 Pro | Description: 6.7" smartphone with a triple-camera system and advanced features | Specifications: 6.7", A15 Bionic, triple camera, Face ID, OLED display	 | Price: $1,099.99 | Stock: 40 | Warranty: 1 year
 
-Book: The Alchemist
-Price: 12
-Author: Paulo Coelho
+Product ID: TB001 | Name: Galaxy Tab S8 | Category: Tablet | Brand: Samsung | Model: Tab S8 | Description: 11" tablet with S Pen support and high performance processing | Specifications: 11", Snapdragon, S Pen, 128GB storage | Price: $699.99 | Stock: 25 | Warranty: 1 year
 
-Book: The Catcher in the Rye
-Price: 10.99
-Author: J.D. Salinger
+Product ID: TB002 | Name: iPad Pro 12.9" | Category: Tablet | Brand: Apple | Model: iPad Pro 2021 | Description: 12.9" tablet with the M1 chip and 5G connectivity | Specifications: 12.9", M1 chip, 128GB, ProMotion display, Face ID | Price: $1,099.99 | Stock: 20 | Warranty: 1 year
 
-Book: The Great Gatsby
-Price: 14.99
-Author: F. Scott Fitzgerald
+Product ID: AP001 | Name: Front Load Washer | Category: Appliance | Brand: LG | Model: WashMaster 500 | Description: High efficiency front load washing machine with smart features | Specifications: 7kg capacity, Energy Star rated, SmartThinQ technology | Price: $499.99 | Stock: 10 | Warranty: 2 years
 
-Book: The Hobbit
-Price: 14.99
-Author: J.R.R. Tolkien
+Product ID: AP002 | Name: Refrigerator 500L | Category: Appliance | Brand: Whirlpool | Model: CoolMaster 500 | Description: 500L double-door refrigerator with inverter compressor and frost-free tech | Specifications: 500L capacity, Energy Star, Frost Free, LED display | Price: $899.99 | Stock: 8 | Warranty: 2 years
 
-Book: The Lord of the Rings
-Price: 22
-Author: J.R.R. Tolkien
-
-Book: To Kill a Mockingbird
-Price: 11.99
-Author: Harper Lee
+Product ID: AP003 | Name: Refrigerator 300l | Category: Appliance | Brand: Hisence | Model: CoolMaster 500 | Description: 500L Single Freezer | Specifications: 300L Capacity | Price: $500 | Stock: 10 | Warranty: 1 year
 
