@@ -162,6 +162,7 @@ class RAG():
             'Never Never Never Never answer any unrelated questions that doesnt concern the business and a customer support assistant'
             'You are limited to the companys information alone'
             'Act like a customer support assistant, with so much marketing skills, parsuade the customer by all means to buy your product'
+            'Make your responses straightforward and cocise, making sure the customer is satisfied by your responses, no need of unecessary info the customer didnt ask of'
             "{context}\n\n"
         )
 
