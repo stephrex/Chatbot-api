@@ -176,7 +176,7 @@ port = int(os.environ.get("PORT", 5000))
 if __name__ == "__main__":
     # Start Google Sheets Polling in a separate thread
     polling_thread = threading.Thread(
-        target=poll_google_sheets, args=(360, 3600, 5), daemon=True)
+        target=poll_google_sheets, args=(3600, 86400, 5), daemon=True)
     polling_thread.start()
 
     app.run(host="0.0.0.0", port=port, debug=True)
