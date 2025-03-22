@@ -41,19 +41,36 @@ class RAG():
             #     f.write(
             #         f"Book: {product['title']}\nPrice: {product['price']}\nAuthor: {product['author']}\n\n")
 
-            f.write("\n## Product Listings/Phones/Electrical Appliances\n")
+            # f.write("\n## Product Listings/Phones/Electrical Appliances\n")
+            # for product in products:
+            #     product_line = (
+            #         f"Product ID: {product.get('Product ID', 'N/A')} | "
+            #         f"Name: {product.get('Product Name', 'N/A')} | "
+            #         f"Category: {product.get('Category', 'N/A')} | "
+            #         f"Brand: {product.get('Brand', 'N/A')} | "
+            #         f"Model: {product.get('Model', 'N/A')} | "
+            #         f"Description: {product.get('Description', 'N/A')} | "
+            #         f"Specifications: {product.get('Specifications', 'N/A')} | "
+            #         f"Price: {product.get('Price', 'N/A')} | "
+            #         f"Stock: {product.get('Stock', 'N/A')} | "
+            #         f"Warranty: {product.get('Warranty', 'N/A')}\n\n"
+            #     )
+            #     f.write(product_line)
+
+            f.write("\n## Product Listings/Phones/Electrical Appliances\n\n")
             for product in products:
                 product_line = (
-                    f"Product ID: {product.get('Product ID', 'N/A')} | "
-                    f"Name: {product.get('Product Name', 'N/A')} | "
-                    f"Category: {product.get('Category', 'N/A')} | "
-                    f"Brand: {product.get('Brand', 'N/A')} | "
-                    f"Model: {product.get('Model', 'N/A')} | "
-                    f"Description: {product.get('Description', 'N/A')} | "
-                    f"Specifications: {product.get('Specifications', 'N/A')} | "
-                    f"Price: {product.get('Price', 'N/A')} | "
-                    f"Stock: {product.get('Stock', 'N/A')} | "
+                    f"Product ID: {product.get('Product ID', 'N/A')}\n"
+                    f"Name: {product.get('Product Name', 'N/A')}\n"
+                    f"Category: {product.get('Category', 'N/A')}\n"
+                    f"Brand: {product.get('Brand', 'N/A')}\n"
+                    f"Model: {product.get('Model', 'N/A')}\n"
+                    f"Description: {product.get('Description', 'N/A')}\n"
+                    f"Specifications: {product.get('Specifications', 'N/A')}\n"
+                    f"Price: {product.get('Price', 'N/A')}\n"
+                    f"Stock: {product.get('Stock', 'N/A')}\n"
                     f"Warranty: {product.get('Warranty', 'N/A')}\n\n"
+                    f"---\n\n"
                 )
                 f.write(product_line)
 
@@ -121,6 +138,7 @@ class RAG():
             "extract relevant product information from the provided context. "
             "If a user asks about a product’s price, availability, or description, answer directly using the given data. "
             "If the information is missing, tell them you couldn't find the details, and redirect them to the website or the human customer support, by giving them the contact details"
+            "website: electronest.com, call/whatsapp: 07069117393, gmail: electronest@gmail.com"
 
             "Instructions:"
             'If the user greets (e.g., "Hello", "Hi", "Good day"), respond with a friendly greeting introducing the business. Example:'
